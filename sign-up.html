@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign UP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/style.css" />
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="/scripts/sign.js"></script>
+  </head>
+  <body>
+    <section class="sign-up">
+      <form action="">
+        <div class="sign-up-head">
+          <div class="font--text">Create an Account</div>
+          <div class="font--des">Create a account to continue</div>
+        </div>
+        <div class="sign-up-center">
+          <div class="sign-up__email">
+            <div class="sign-up--text">Email address:</div>
+            <input class="" id="email" type="email" placeholder="esteban_schiller@gmail.com" />
+            <div class="tooltip error__message"></div>
+          </div>
+          <div class="sign-up__name">
+            <div class="sign-up--text">Username</div>
+            <input class="" id="username" type="text" placeholder="Username" />
+            <div class="tooltip error__message"></div>
+          </div>
+          <div class="sign-up__password">
+            <div class="sign-up-password__group">
+              <div class="sign-up--text">Password</div>
+              <div class="sign-up--text">
+                <a href="">Forget Password?</a>
+              </div>
+            </div>
+            <input class="" id="password" type="password" />
+            <div class="tooltip error__message"></div>
+            <div class="sign-up__checkbox">
+              <input id="checkbox" class="checkbox--size" type="checkbox" />
+              <div class="sign-up-checkbox--text">I accept terms and conditions</div>
+            </div>
+          </div>
+        </div>
+        <div class="sign-up-footer">
+          <div class="btn__sign">Sign Up</div>
+          <div class="sign-up-footer__group">
+            <div class="sign-up-footer__text">Already have an account?</div>
+            <a href="sign-in.html">Login</a>
+          </div>
+        </div>
+      </form>
+    </section>
+  </body>
+</html>
