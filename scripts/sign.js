@@ -132,7 +132,7 @@ function validateUsername(usernameElement) {
 function validatePassword(passwordElement) {
   const password = passwordElement.val().trim();
   const tooltip = passwordElement.next('.tooltip');
-  const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
+  const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*)[A-Za-z\d@$!%*?&#]{6,}$/;
   if (!passwordRegex.test(password)) {
     passwordElement.addClass("input-error");
     tooltip.text("Password must be at least 6 characters and include a capital letter, a number, and a special character.");

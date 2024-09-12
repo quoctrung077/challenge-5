@@ -177,6 +177,7 @@ img {
   font-size: 20px;
   line-height: 27.28px;
   font-weight: 700;
+  cursor: pointer;
 }
 .sign-up form .sign-up-footer .btn__sign:hover {
   transform: scale(1.05);

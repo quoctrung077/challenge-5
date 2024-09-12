@@ -48,6 +48,7 @@ $breakpoints: (
   font-size: 20px;
   line-height: 27.28px;
   font-weight: 700;
+  cursor: pointer;
 }
 * {
   padding: 0;
@@ -55,6 +56,7 @@ $breakpoints: (
   box-sizing: border-box;
   font-family: $font;
 }
+
 img {
   max-width: 100%;
   object-fit: cover;
