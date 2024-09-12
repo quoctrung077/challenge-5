@@ -43,7 +43,7 @@ function validateUsername(usernameElement) {
 function validatePassword(passwordElement) {
   const password = passwordElement.val().trim();
   const passwordRegex =
-    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]{6,}$/;
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*\W)[A-Za-z\d\W]{6,}$/;
   const isValid = passwordRegex.test(password);
   passwordElement.toggleClass("input-error", !isValid);
   return isValid;
@@ -55,7 +55,6 @@ function validateCheckbox(checkboxElement) {
   checkboxElement
     .toggleClass("input-error-text", !isChecked)
     .css("border-color", isChecked ? "" : "red");
-  console.log(isChecked, "checkbox");
   return isChecked;
 }
 

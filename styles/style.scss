@@ -3,7 +3,7 @@ $bgc: #4880ff;
 $font: Nunito Sans;
 $font-size-text: 32px;
 $font-size-des: 18px;
-$bdf: 1px solid #b9b9b9;
+$boder-input: 1px solid #b9b9b9;
 $color: #202224;
 $breakpoints: (
   phone-sm: 420px,
@@ -14,13 +14,12 @@ $breakpoints: (
   desktop-lg: 1600px,
 );
 @mixin responsive($breakpoint) {
-  //Kiểm tra breakpoint truyền vào có tồn tại
+  //Nếu breakpoint tồn tại như đã định nghĩa ở trên
   @if map-has-key($breakpoints, $breakpoint) {
-    // Lấy giá trị pixel breakpoint đó
+    // Lấy giá trị pixel breakpoint đó để truyền
     $breakpoint-value: map-get($breakpoints, $breakpoint);
     //Build media query
     @media (max-width: $breakpoint-value) {
-      //Những gì bạn mong muốn sẽ được lồng vào @content
       @content;
     }
   }
@@ -117,7 +116,7 @@ img {
         @include des;
         padding: 16px;
         border-radius: 8px;
-        border: $bdf;
+        border: $boder-input;
         color: #a6a6a6;
         @include responsive(tablet) {
           font-size: 14px;
