@@ -190,6 +190,10 @@ img {
       justify-content: center;
       .btn__sign {
         @include btn-sign;
+        &:hover{
+          transform: scale(1.05); 
+          transition: background-color 0.3s ease, transform 0.3s ease;
+        }
         @include responsive(tablet) {
           max-width: 100%;
           padding: 10px 40px;

@@ -178,6 +178,10 @@ img {
   line-height: 27.28px;
   font-weight: 700;
 }
+.sign-up form .sign-up-footer .btn__sign:hover {
+  transform: scale(1.05);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
 @media (max-width: 768px) {
   .sign-up form .sign-up-footer .btn__sign {
     max-width: 100%;
