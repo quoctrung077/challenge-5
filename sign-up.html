@@ -15,46 +15,58 @@
     <script src="/scripts/sign.js"></script>
   </head>
   <body>
-    <section class="sign-up">
+    <div class="signup">
       <form action="">
-        <div class="sign-up-head">
-          <div class="font--text">Create an Account</div>
-          <div class="font--des">Create a account to continue</div>
+        <div class="signup__head">
+          <div class="signup__head--text">Create an Account</div>
+          <div class="signup__head--des">Create a account to continue</div>
         </div>
-        <div class="sign-up-center">
-          <div class="sign-up__email">
-            <div class="sign-up--text">Email address:</div>
-            <input class="" id="email" type="email" placeholder="esteban_schiller@gmail.com" />
-            <div class="tooltip error__message"></div>
+        <div class="signup__center">
+          <div class="signup__centerEmail">
+            <div class="signup__centerEmail--text">Email address:</div>
+            <input
+              class=""
+              id="email"
+              type="email"
+              placeholder="esteban_schiller@gmail.com"
+            />
           </div>
-          <div class="sign-up__name">
-            <div class="sign-up--text">Username</div>
+          <div class="signup__centerName">
+            <div class="signup__centerName--text">Username</div>
             <input class="" id="username" type="text" placeholder="Username" />
-            <div class="tooltip error__message"></div>
           </div>
-          <div class="sign-up__password">
-            <div class="sign-up-password__group">
-              <div class="sign-up--text">Password</div>
-              <div class="sign-up--text">
+          <div class="signup__centerpassword">
+            <div class="signup__passwordGroup">
+              <div class="signup__passwordGroup--text">Password</div>
+              <div class="signup__passwordGroup--text">
                 <a href="">Forget Password?</a>
               </div>
             </div>
             <input class="" id="password" type="password" />
-            <div class="tooltip error__message"></div>
-            <div class="sign-up__checkbox">
-              <input id="checkbox" class="checkbox--size" type="checkbox" />
-              <div class="sign-up-checkbox--text">I accept terms and conditions</div>
+            <div class="signup__checkbox">
+              <div class="signup__checkbox--customCheckbox">
+                <input
+                  id="checkbox"
+                  class="signup__checkbox--size"
+                  type="checkbox"
+                />
+              </div>
+              <div class="signup__checkbox--text">
+                I accept terms and conditions
+              </div>
             </div>
           </div>
         </div>
-        <div class="sign-up-footer">
+        <div class="signup__footer">
           <div class="btn__sign">Sign Up</div>
-          <div class="sign-up-footer__group">
-            <div class="sign-up-footer__text">Already have an account?</div>
+          <div class="signup__footerGroup">
+            <div class="signup__footerGroup--text">
+              Already have an account?
+            </div>
             <a href="sign-in.html">Login</a>
           </div>
         </div>
       </form>
-    </section>
+    </div>
   </body>
 </html>
