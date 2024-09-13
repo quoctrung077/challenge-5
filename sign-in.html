@@ -1,11 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign in</title>
-</head>
-<body>
-    <h1>sign in</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles/style.css">
+  </head>
+  <body>
+    <section class="signin">
+      <form action="">
+        <div class="signin__head">
+          <div class="signup__head--text">Login to Account</div>
+          <div class="signup__head--des">
+            Please enter your email and password to continue
+          </div>
+        </div>
+        <div class="signin__center">
+          <div class="signin__centerEmail">
+            <div class="signin__centerEmail--text">Email address:</div>
+            <input
+              class=""
+              id="email"
+              type="email"
+              placeholder="esteban_schiller@gmail.com"
+            />
+          </div>
+          <div class="signin__centerPassword">
+            <div class="signin__passwordGroup">
+              <div class="signin__passwordGroup--text">Password</div>
+              <div class="signin__passwordGroup--text">
+                <a href="">Forget Password?</a>
+              </div>
+            </div>
+            <input class="" id="password" type="password" />
+            <div class="signin__checkbox">
+              <div class="signin__checkbox--customCheckbox">
+                <input
+                  id="checkbox"
+                  class="signin__checkbox--size"
+                  type="checkbox"
+                />
+              </div>
+              <div class="signin__checkbox--text">
+                Remember Password
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="signin__footer">
+          <div class="btn__sign">Sign In</div>
+          <div class="signin__footerGroup">
+            <div class="signin__footerGroup--text">Don’t have an account?</div>
+            <a href="sign-up.html">Create Account</a>
+          </div>
+        </div>
+      </form>
+    </section>
+  </body>
 </html>
