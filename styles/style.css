@@ -341,6 +341,7 @@ img {
   border-radius: 8px;
   border: 1px solid #b9b9b9;
   color: #a6a6a6;
+  opacity: 1 !important;
 }
 @media (max-width: 768px) {
   .signin__center .signin__centerEmail input, .signin__center .signin__centerPassword input {

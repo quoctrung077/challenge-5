@@ -13,15 +13,14 @@ $breakpoints: (
   desktop: 1025px,
   desktop-lg: 1600px,
 );
-@mixin responsive($breakpoint) {
-  //Nếu breakpoint tồn tại như đã định nghĩa ở trên
-  @if map-has-key($breakpoints, $breakpoint) {
-    // Lấy giá trị pixel breakpoint đó để truyền
-    $breakpoint-value: map-get($breakpoints, $breakpoint);
-    //Build media query
-    @media (max-width: $breakpoint-value) {
-      @content;
-    }
+
+@function breakpoint($breakpoint-name) {
+  @return map-get($breakpoints, $breakpoint-name);
+}
+
+@mixin responsive($breakpoint, $media-type: 'max-width') {
+  @media (#{$media-type}: breakpoint($breakpoint)) {
+    @content;
   }
 }
 
@@ -306,6 +305,7 @@ img {
         border-radius: 8px;
         border: $boder-input;
         color: #a6a6a6;
+        opacity: 1 !important;
         @include responsive(tablet) {
           font-size: 14px;
           padding: 10px;

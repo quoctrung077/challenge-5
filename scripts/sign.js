@@ -110,10 +110,9 @@ function getLocalStorage(username) {
     if (formData.password === enteredPassword) {
       window.location.href = "sign-up.html";
     } else {
-    $("#password").addClass("input-error")
-      console.log("Sai mật khẩu!");
+      $("#password").addClass("input-error");
     }
   } else {
-    $("#email").addClass("input-error")
+    $("#email").addClass("input-error");
   }
 }
