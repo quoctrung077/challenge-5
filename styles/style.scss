@@ -204,7 +204,7 @@ img {
     gap: 18px;
     align-items: center;
     justify-content: center;
-    .btn__sign {
+    .btn__signup {
       @include btn-sign;
       &:hover {
         transform: scale(1.05);
@@ -385,7 +385,7 @@ img {
     gap: 18px;
     align-items: center;
     justify-content: center;
-    .btn__sign {
+    .btn__signin {
       @include btn-sign;
       &:hover {
         transform: scale(1.05);

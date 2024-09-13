@@ -191,7 +191,7 @@ img {
   align-items: center;
   justify-content: center;
 }
-.signup__footer .btn__sign {
+.signup__footer .btn__signup {
   padding: 15px 172px 14px;
   background-color: #4880ff;
   align-items: center;
@@ -203,12 +203,12 @@ img {
   font-weight: 700;
   cursor: pointer;
 }
-.signup__footer .btn__sign:hover {
+.signup__footer .btn__signup:hover {
   transform: scale(1.05);
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 @media (max-width: 768px) {
-  .signup__footer .btn__sign {
+  .signup__footer .btn__signup {
     max-width: 100%;
     padding: 10px 40px;
     font-size: 18px;
@@ -430,7 +430,7 @@ img {
   align-items: center;
   justify-content: center;
 }
-.signin__footer .btn__sign {
+.signin__footer .btn__signin {
   padding: 15px 172px 14px;
   background-color: #4880ff;
   align-items: center;
@@ -442,12 +442,12 @@ img {
   font-weight: 700;
   cursor: pointer;
 }
-.signin__footer .btn__sign:hover {
+.signin__footer .btn__signin:hover {
   transform: scale(1.05);
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 @media (max-width: 768px) {
-  .signin__footer .btn__sign {
+  .signin__footer .btn__signin {
     max-width: 100%;
     padding: 10px 40px;
     font-size: 18px;
