@@ -103,6 +103,14 @@ function saveToLocalStorage() {
 function getLocalStorage(username) {
   const enteredEmail = $("#email").val().trim();
   const enteredPassword = $("#password").val().trim();
+  $("#email").removeClass("input-error");
+  $("#password").removeClass("input-error");
+
+  if (!enteredEmail && !enteredPassword) {
+    $("#email").addClass("input-error");
+    $("#password").addClass("input-error");
+    return;
+  }
   const storedData = localStorage.getItem(enteredEmail);
   if (storedData) {
     // Chuyển dữ liệu từ JSON

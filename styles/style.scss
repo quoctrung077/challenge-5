@@ -18,7 +18,7 @@ $breakpoints: (
   @return map-get($breakpoints, $breakpoint-name);
 }
 
-@mixin responsive($breakpoint, $media-type: 'max-width') {
+@mixin responsive($breakpoint, $media-type: "max-width") {
   @media (#{$media-type}: breakpoint($breakpoint)) {
     @content;
   }
@@ -432,5 +432,4 @@ img {
       margin: auto 25px;
     }
   }
-  
 }
