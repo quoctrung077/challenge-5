@@ -1,24 +1,25 @@
 // xử lý form sign up
 $(document).ready(function () {
   // xử lý form khi submit
-  $(".btn__sign").click(function (event) {
-    event.preventDefault(); // Chặn không cho gửi
-    let valid = true;
-    // kiểm tra các ô input
-    valid = validateEmail($("#email"));
-    valid = validateUsername($("#username"));
-    valid = validatePassword($("#password"));
-    valid = validateCheckbox($("#checkbox, .signup__checkbox--text"));
-    if (valid) {
-      saveToLocalStorage();
-      window.location.href = "sign-in.html";
-    }
-  });
-
-  //xử lý khi mất focus ra khỏi ô
-  var input = $("#email, #username, #password");
-  $(input).on("blur", function () {
-    validateInput($(this));
+  if ($("body").hasClass("signupPage")) {
+    $(".btn__signup").click(function (event) {
+      event.preventDefault(); // Chặn không cho gửi
+      let valid = true;
+      // kiểm tra các ô input
+      valid = validateEmail($("#email"));
+      valid = validateUsername($("#username"));
+      valid = validatePassword($("#password"));
+      valid = validateCheckbox($("#checkbox, .signup__checkbox--text"));
+      if (valid) {
+        saveToLocalStorage();
+        window.location.href = "sign-in.html";
+      }
+    });
+  }
+  // xử lý form signin
+  $(".btn__signin").click(function (event) {
+    event.preventDefault();
+    getLocalStorage();
   });
 });
 
@@ -60,17 +61,19 @@ function validateCheckbox(checkboxElement) {
 
 // Hàm xử lý các input khi mất focus
 function validateInput(inputElement) {
-  const id = inputElement.attr("id");
-  switch (id) {
-    case "email":
-      validateEmail(inputElement);
-      break;
-    case "username":
-      validateUsername(inputElement);
-      break;
-    case "password":
-      validatePassword(inputElement);
-      break;
+  if ($("body").hasClass("signupPage")) {
+    const id = inputElement.attr("id");
+    switch (id) {
+      case "email":
+        validateEmail(inputElement);
+        break;
+      case "username":
+        validateUsername(inputElement);
+        break;
+      case "password":
+        validatePassword(inputElement);
+        break;
+    }
   }
 }
 
@@ -81,7 +84,7 @@ function saveToLocalStorage() {
   const password = $("#password").val().trim();
   const checkbox = $("#checkbox").is(":checked");
   // xem user có rỗng ko
-  if (username) {
+  if (email) {
     //chứa data
     const formData = {
       email: email,
@@ -90,8 +93,34 @@ function saveToLocalStorage() {
       checkbox: checkbox,
     };
     // Chuyển đối tượng thành chuỗi JSON (JSON.stringify())
-    localStorage.setItem(username, JSON.stringify(formData));
+    localStorage.setItem(email, JSON.stringify(formData));
   } else {
     console.error("Username không hợp lệ.");
+  }
+}
+
+// hàm get local storage
+function getLocalStorage(username) {
+  const enteredEmail = $("#email").val().trim();
+  const enteredPassword = $("#password").val().trim();
+  $("#email").removeClass("input-error");
+  $("#password").removeClass("input-error");
+
+  if (!enteredEmail && !enteredPassword) {
+    $("#email").addClass("input-error");
+    $("#password").addClass("input-error");
+    return;
+  }
+  const storedData = localStorage.getItem(enteredEmail);
+  if (storedData) {
+    // Chuyển dữ liệu từ JSON
+    const formData = JSON.parse(storedData);
+    if (formData.password === enteredPassword) {
+      window.location.href = "sign-up.html";
+    } else {
+      $("#password").addClass("input-error");
+    }
+  } else {
+    $("#email").addClass("input-error");
   }
 }
