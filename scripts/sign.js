@@ -116,7 +116,7 @@ function getLocalStorage(username) {
     // Chuyển dữ liệu từ JSON
     const formData = JSON.parse(storedData);
     if (formData.password === enteredPassword) {
-      window.location.href = "sign-up.html";
+      window.location.href = "add-contact.html";
     } else {
       $("#password").addClass("input-error");
     }

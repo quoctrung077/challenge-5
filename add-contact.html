@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Contact</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles/contact.css" />
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="/scripts/contact.js"></script>
+    <script src="/scripts/menuPage.js"></script>
+  </head>
+  <body class="contactPage">
+    <section class="addContact">
+      <div class="menuPage">
+        <div class="menuPage__logo">
+          <span class="menuPage__logo--textColor">Dash</span>Stack
+        </div>
+        <div class="menuPage__item">
+          <div class="menuPage__item--text">PAGES</div>
+          <div class="menuPage__itemWrap">
+            <div id="contact" class="menuPage__itemwrapText">
+              <div id="hideBg" class="menuPage__itemwrapText--bgc1"></div>
+              <div id="text" class="menuPage__itemwrapText--bgc">Contact</div>
+            </div>
+            <div class="menuPage__itemwrapText">
+              <div class="menuPage__itemwrapText--bgc1"></div>
+              <div class="menuPage__itemwrapText--bgc">Team</div>
+            </div>
+          </div>
+        </div>
+        <div id="btn__logout" class="menuPage__footer">Logout</div>
+      </div>
+      <div class="namePage">
+        <div class="namePage__navbarTop">
+          <div class="navbarTop__avatarImg">
+            <img src="image/avatar.svg" alt="" />
+          </div>
+          <div class="navbarTop__wrapInfo">
+            <div id="usernameDisplay" class="navbarTop__wrapInfo--text"></div>
+            <div class="navbarTop__wrapInfo--des">User</div>
+          </div>
+        </div>
+        <div class="namePageBg">
+          <div class="namePageBg__text">Add New Contact</div>
+          <form action=" ">
+            <div class="form">
+              <div class="fromWrap">
+                <div class="fromWrap--text">First Name</div>
+                <div class="">
+                  <input
+                    class=""
+                    id="firstName"
+                    type="text"
+                    placeholder="Enter first name"
+                  />
+                </div>
+              </div>
+              <div class="fromWrap">
+                <div class="fromWrap--text">Last Name</div>
+                <div>
+                  <input
+                    class=""
+                    id="lastName"
+                    type="text"
+                    placeholder="Enter last name"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="form">
+              <div class="fromWrap">
+                <div class="fromWrap--text">Email</div>
+                <div class="fromWrap">
+                  <input
+                    class=""
+                    id="email"
+                    type="text"
+                    placeholder="Enter email"
+                  />
+                </div>
+              </div>
+              <div class="fromWrap">
+                <div class="fromWrap--text">Phone Number</div>
+                <div>
+                  <input
+                    class=""
+                    id="phone"
+                    type="text"
+                    placeholder="Enter phone number"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="form">
+              <div class="fromWrap">
+                <div class="fromWrap--text">Date of Birth</div>
+                <div class="Form__wrap">
+                  <input
+                    class=""
+                    id="birth"
+                    type="text"
+                    placeholder="Enter birthdate"
+                  />
+                </div>
+              </div>
+              <div class="fromWrap">
+                <div class="fromWrap--text">Gender</div>
+                <select name="" id="gender">
+                  <option value="male">Male</option>
+                  <option value="female">female</option>
+                </select>
+              </div>
+            </div>
+            <div class="btn btn__Add">Add Now</div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

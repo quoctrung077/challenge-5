@@ -1,0 +1,360 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Nunito Sans;
+}
+
+img {
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.input-error {
+  border: 1px solid red !important;
+}
+
+.addContact {
+  display: flex;
+}
+.addContact .menuPage {
+  display: flex;
+  gap: 21px;
+  width: 240px;
+  flex-direction: column;
+}
+.addContact .menuPage__logo {
+  font-family: Nunito Sans;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 27.28px;
+  text-align: center;
+  padding: 24px 53.36px 19px 66px;
+}
+.addContact .menuPage__logo--textColor {
+  color: #4880ff;
+}
+.addContact .menuPage__item {
+  display: flex;
+  flex-direction: column;
+  padding: 0 24px;
+}
+.addContact .menuPage__item--text {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16.37px;
+  opacity: 0.6;
+  margin: 16px 0;
+}
+.addContact .menuPage__item .menuPage__itemWrap {
+  position: relative;
+}
+.addContact .menuPage__item .menuPage__itemWrap .menuPage__itemwrapText {
+  display: flex;
+  gap: 20px;
+  border-radius: 8px;
+}
+.addContact .menuPage__item .menuPage__itemWrap .menuPage__itemwrapText--bgc {
+  padding-top: 16px;
+  padding-bottom: 15px;
+  padding-left: 15px;
+}
+.addContact .menuPage__item .menuPage__itemWrap .menuPage__itemwrapText--bgc1 {
+  position: absolute;
+  border-radius: 4px;
+  width: 9px;
+  height: 50px;
+  left: -28.5px;
+}
+.addContact .menuPage__footer {
+  display: flex;
+  margin-top: 764px;
+  padding: 32px 0 15px;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 19.1px;
+  border-top: 0.6px solid #e0e0e0;
+}
+.addContact .namePage {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.addContact .namePage__navbarTop {
+  display: flex;
+  justify-content: flex-end;
+  padding: 13px 75px 13px 0;
+  gap: 20px;
+}
+.addContact .namePage__navbarTop .navbarTop__wrapInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  justify-content: center;
+}
+.addContact .namePage__navbarTop .navbarTop__wrapInfo--text {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 19.1px;
+  color: #404040;
+  font-weight: 700;
+}
+.addContact .namePage__navbarTop .navbarTop__wrapInfo--des {
+  color: #565656;
+  opacity: 0.8;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16.37px;
+}
+.addContact .namePage .namePageBg {
+  background-color: #f5f6fa;
+  height: -webkit-fill-available;
+  padding-left: 30px;
+  padding-right: 31px;
+}
+.addContact .namePage .namePageBg__text {
+  margin-top: 38px;
+  margin-bottom: 37px;
+  font-size: 32px;
+  line-height: 43.65px;
+  color: #202224;
+  font-weight: bold;
+}
+.addContact .namePage .namePageBg .form:nth-child(1) {
+  margin-bottom: 60px;
+}
+.addContact .namePage .namePageBg .form:nth-child(2) {
+  margin-bottom: 50px;
+}
+.addContact .namePage .namePageBg .form:nth-child(3) {
+  margin-left: -183px;
+  margin-bottom: 60px;
+}
+.addContact .namePage .namePageBg .form {
+  display: flex;
+  gap: 60px;
+}
+.addContact .namePage .namePageBg .form .fromWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+.addContact .namePage .namePageBg .form .fromWrap--text {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 19.1px;
+  color: #606060;
+}
+.addContact .namePage .namePageBg .form .fromWrap input {
+  padding: 18px 15px 16px;
+  border-radius: 8px;
+  border: 0.6px solid #D5D5D5;
+  color: #a6a6a6;
+  width: 360px;
+}
+.addContact .namePage .namePageBg .form .fromWrap select {
+  padding: 18px 0 15px 16px;
+  border-radius: 8px;
+  border: 0.6px solid #D5D5D5;
+  color: #a6a6a6;
+  width: 177px;
+}
+.addContact .namePage .namePageBg .btn {
+  padding: 16px 97px 15px 98px;
+  background-color: #4880ff;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24.55px;
+  text-align: center;
+}
+.addContact form {
+  background-color: #ffffff;
+  border-radius: 20px;
+  border: 0.3px solid #b9b9b9;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 136px 0;
+}
+
+.listContact {
+  display: flex;
+}
+.listContact .menuPage {
+  display: flex;
+  gap: 21px;
+  width: 240px;
+  flex-direction: column;
+}
+.listContact .menuPage__logo {
+  font-family: Nunito Sans;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 27.28px;
+  text-align: center;
+  padding: 24px 53.36px 19px 66px;
+}
+.listContact .menuPage__logo--textColor {
+  color: #4880ff;
+}
+.listContact .menuPage__item {
+  display: flex;
+  flex-direction: column;
+  padding: 0 24px;
+}
+.listContact .menuPage__item--text {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16.37px;
+  opacity: 0.6;
+  margin: 16px 0;
+}
+.listContact .menuPage__item .menuPage__itemWrap {
+  position: relative;
+}
+.listContact .menuPage__item .menuPage__itemWrap .menuPage__itemwrapText {
+  display: flex;
+  gap: 20px;
+  border-radius: 8px;
+}
+.listContact .menuPage__item .menuPage__itemWrap .menuPage__itemwrapText--bgc {
+  padding-top: 16px;
+  padding-bottom: 15px;
+  padding-left: 15px;
+}
+.listContact .menuPage__item .menuPage__itemWrap .menuPage__itemwrapText--bgc1 {
+  position: absolute;
+  border-radius: 4px;
+  width: 9px;
+  height: 50px;
+  left: -28.5px;
+}
+.listContact .menuPage__footer {
+  display: flex;
+  margin-top: 764px;
+  padding: 32px 0 15px;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 19.1px;
+  border-top: 0.6px solid #e0e0e0;
+}
+.listContact .namePage {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.listContact .namePage__navbarTop {
+  display: flex;
+  justify-content: flex-end;
+  padding: 13px 75px 13px 0;
+  gap: 20px;
+}
+.listContact .namePage__navbarTop .navbarTop__wrapInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  justify-content: center;
+}
+.listContact .namePage__navbarTop .navbarTop__wrapInfo--text {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 19.1px;
+  color: #404040;
+  font-weight: 700;
+}
+.listContact .namePage__navbarTop .navbarTop__wrapInfo--des {
+  color: #565656;
+  opacity: 0.8;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16.37px;
+}
+.listContact .namePage .namePageBg {
+  background-color: #f5f6fa;
+  height: -webkit-fill-available;
+  padding-left: 30px;
+  padding-right: 31px;
+}
+.listContact .namePage .namePageBg__center {
+  display: flex;
+  margin-top: 38px;
+  margin-bottom: 37px;
+  align-items: center;
+  justify-content: space-between;
+}
+.listContact .namePage .namePageBg__center .namePageBg__text {
+  font-size: 32px;
+  line-height: 43.65px;
+  color: #202224;
+  font-weight: bold;
+}
+.listContact .namePage .namePageBg__center .btn {
+  padding: 11px 16px 10px;
+  background-color: #4880ff;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 27px;
+  cursor: pointer;
+}
+.listContact .namePage .namePageBg__center .btn:hover {
+  transform: scale(1.05);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.listContact .namePage .namePageBg .namePageBgWrap__card {
+  height: auto;
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.listContact .namePage .namePageBg .namePageBgWrap__card .cardContract {
+  position: relative;
+  width: 360px;
+  background-color: #ffffff;
+  padding-bottom: 30px;
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.listContact .namePage .namePageBg .namePageBgWrap__card .cardContract .card__name {
+  margin: 14px 0 4px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 21.82px;
+}
+.listContact .namePage .namePageBg .namePageBgWrap__card .cardContract .card__email {
+  opacity: 0.6;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19.1px;
+}
+.listContact .namePage .namePageBg .namePageBgWrap__card .cardContract:hover .btn__delete {
+  display: block;
+}
+.listContact .namePage .namePageBg .namePageBgWrap__card .cardContract:hover {
+  border: 0.3px solid #b9b9b9;
+  box-shadow: 6px 6px 54px 0px rgba(0, 0, 0, 0.031372549);
+}
+.listContact .namePage .namePageBg .namePageBgWrap__card .cardContract .btn__delete {
+  display: none;
+  position: absolute;
+  top: 10px;
+  right: 10.4px;
+  padding: 10px 10px 7.6px;
+  background-color: #fafbfd;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2509803922);
+}
+.listContact .namePage .namePageBg .namePageBgWrap__card .cardContract .btn__delete:hover {
+  transform: scale(1.05);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/*# sourceMappingURL=contact.css.map */
