@@ -11,7 +11,10 @@ $(document).ready(function () {
       valid = validatePassword($("#password"));
       valid = validateCheckbox($("#checkbox, .signup__checkbox--text"));
       if (valid) {
-        saveToLocalStorage();
+        if (!saveToLocalStorage()) {
+          alert("Email đã tồn tại. Vui lòng chọn email khác.");
+          return;
+        }
         window.location.href = "sign-in.html";
       }
     });
@@ -92,11 +95,11 @@ function saveToLocalStorage() {
   const randomIndex = Math.floor(Math.random() * avatarList.length);
   const selected_image = avatarList[randomIndex];
   const user = JSON.parse(localStorage.getItem("users")) || [];
-  const emailExists = user.some(u => u.email === email);
+  const emailExists = user.some((u) => u.email === email);
 
   if (username && email && password && checkbox) {
     if (emailExists) {
-      return;
+      return false;
     }
     const formData = {
       email: email,
@@ -108,7 +111,9 @@ function saveToLocalStorage() {
     user.push(formData);
     // Chuyển đối tượng thành chuỗi JSON (JSON.stringify())
     localStorage.setItem("users", JSON.stringify(user));
+    return true;
   }
+  return false;
 }
 
 // hàm get local storage
