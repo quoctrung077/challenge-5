@@ -97,6 +97,10 @@ img {
   padding: 13px 75px 13px 0;
   gap: 20px;
 }
+.addContact .namePage__navbarTop .navbarTop__avatarImg {
+  display: flex;
+  width: 44px;
+}
 .addContact .namePage__navbarTop .navbarTop__wrapInfo {
   display: flex;
   flex-direction: column;

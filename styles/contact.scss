@@ -138,6 +138,10 @@ img {
     flex-direction: column;
     width: 100%;
     &__navbarTop {
+      .navbarTop__avatarImg{
+        display: flex;
+        width: 44px;
+      }
       display: flex;
       justify-content: flex-end;
       padding: 13px 75px 13px 0;
