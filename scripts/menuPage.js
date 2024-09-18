@@ -1,21 +1,22 @@
 $(document).ready(function () {
-  for (let i = 0; i < localStorage.length; i++) {
-    const key = localStorage.key(i);
-    loadUsernameFromLocalStorage(key);
-  }
   $("#btn__logout").click(function (event) {
     window.location.href = "sign-in.html";
   });
   $("#btn__addContact").click(function (event) {
     window.location.href = "add-contact.html";
   });
+  loadUserData();
   sliderPage();
 });
-function loadUsernameFromLocalStorage(email) {
-  const storedData = localStorage.getItem(email);
-  if (storedData) {
-    const formData = JSON.parse(storedData);
-    $("#usernameDisplay").text(formData.username);
+function loadUserData(email) {
+  const users = JSON.parse(localStorage.getItem("users")) || [];
+  console.log(users);
+  const user = users.find(user => user.email === email);
+  console.log(user);
+
+  if (user) {
+    $("#imguser").attr("src", `image/avatarusers/${user.avataruser}`);
+    $("#usernameDisplay").text(user.username);
   }
 }
 function sliderPage() {

@@ -83,40 +83,55 @@ function saveToLocalStorage() {
   const email = $("#email").val().trim();
   const password = $("#password").val().trim();
   const checkbox = $("#checkbox").is(":checked");
-  // xem user có rỗng ko
-  if (email) {
-    //chứa data
+  const avatarList = [
+    "avatar.svg",
+    "avatar1.svg",
+    "avatar2.svg",
+    "avatar3.svg",
+  ];
+  const randomIndex = Math.floor(Math.random() * avatarList.length);
+  const selected_image = avatarList[randomIndex];
+  const user = JSON.parse(localStorage.getItem("users")) || [];
+  const emailExists = user.some(u => u.email === email);
+
+  if (username && email && password && checkbox) {
+    if (emailExists) {
+      return;
+    }
     const formData = {
       email: email,
       username: username,
       password: password,
       checkbox: checkbox,
+      avataruser: selected_image,
     };
+    user.push(formData);
     // Chuyển đối tượng thành chuỗi JSON (JSON.stringify())
-    localStorage.setItem(email, JSON.stringify(formData));
-  } else {
-    console.error("Username không hợp lệ.");
+    localStorage.setItem("users", JSON.stringify(user));
   }
 }
 
 // hàm get local storage
-function getLocalStorage(username) {
+function getLocalStorage() {
   const enteredEmail = $("#email").val().trim();
   const enteredPassword = $("#password").val().trim();
   $("#email").removeClass("input-error");
   $("#password").removeClass("input-error");
 
-  if (!enteredEmail && !enteredPassword) {
-    $("#email").addClass("input-error");
-    $("#password").addClass("input-error");
+  if (!enteredEmail || !enteredPassword) {
+    if (!enteredEmail) {
+      $("#email").addClass("input-error");
+    }
+    if (!enteredPassword) {
+      $("#password").addClass("input-error");
+    }
     return;
   }
-  const storedData = localStorage.getItem(enteredEmail);
-  if (storedData) {
-    // Chuyển dữ liệu từ JSON
-    const formData = JSON.parse(storedData);
-    if (formData.password === enteredPassword) {
-      window.location.href = "add-contact.html";
+  const users = JSON.parse(localStorage.getItem("users")) || [];
+  const user = users.find((user) => user.email === enteredEmail);
+  if (user) {
+    if (user.password === enteredPassword) {
+      window.location.href = "list-contact.html";
     } else {
       $("#password").addClass("input-error");
     }

@@ -15,8 +15,11 @@ $(document).ready(function () {
   $("#contact").click(function (event) {
     window.location.href = "list-contact.html";
   });
+  $(document).on("click", ".btn__delete", function () {
+    const contactId = $(this).closest(".cardContract").data("set");
+    deleteContact(contactId);
+  });
   insertCard();
-  deleteCardContact();
 });
 
 function validateFirstName(firstnameElement) {
@@ -76,7 +79,9 @@ function saveContact() {
 
   if (firstName && lastName && email && phone && birth && gender) {
     const contact = JSON.parse(localStorage.getItem("contact")) || [];
-    const newId = Object.keys(contact).length + 1;
+    const maxId =
+      contact.length > 0 ? Math.max(...contact.map((c) => c.id)) : 0;
+    const newId = maxId + 1;
     const listcontact = {
       id: newId,
       firstName: firstName,
@@ -90,7 +95,6 @@ function saveContact() {
     };
 
     contact.push(listcontact);
-    // contact[newId] = listcontact;
     localStorage.setItem("contact", JSON.stringify(contact));
   }
 }
@@ -105,7 +109,7 @@ function insertCard() {
                 <img src="/image/delete.svg" alt="">
               </div>
               <div>
-                <img src="image/avatar/${item.imgContact}" alt="" />
+                <img src="image/avatars/${item.imgContact}" alt="" />
               </div>
               <div class="card__name">${item.firstName + item.lastName}</div>
               <div class="card__email">${item.email}</div>
@@ -115,34 +119,27 @@ function insertCard() {
   cardwrap.append(addCard);
 }
 
-function deleteCardContact() {
-  const btnDeletes = $(".btn__delete");
-  for (let i = 0; i < btnDeletes.length; i++) {
-    const btnDelete = btnDeletes[i];
-    btnDelete.addEventListener("click", (e) => {
-      const listContact = JSON.parse(localStorage.getItem("contact")) || [];
-      const idContact = btnDelete.parentNode.dataset.set;
-      const newContract = listContact.filter(
-        (item) => item.id !== Number(idContact)
-      );
+function deleteContact(id) {
+  try {
+    let contacts = JSON.parse(localStorage.getItem("contact")) || [];
 
-      localStorage.setItem("contact", JSON.stringify(newContract));
+    const indexToDelete = contacts.findIndex((contact) => contact.id === id);
 
-      const addCard = newContract.reverse().map(
-        (item) => ` <div class="cardContract" data-set=${item.id}>
-                  <div class="btn btn__delete">
-                    <img src="/image/delete.svg" alt="">
-                  </div>
-                  <div>
-                    <img src="image/avatar/${item.imgContact}" alt="" />
-                  </div>
-                  <div class="card__name">${item.firstName + item.lastName
-          }</div>
-                  <div class="card__email">${item.email}</div>
-                </div>`
-      );
-
-      cardwrap.append(addCard);
-    });
+    if (indexToDelete !== -1) {
+      contacts.splice(indexToDelete, 1);
+      localStorage.setItem("contact", JSON.stringify(contacts));
+      $(`.cardContract[data-set="${id}"]`).fadeOut(300, function () {
+        $(this).remove();
+      });
+      console.log("Xóa liên hệ thành công");
+      if (typeof updateContactCount === "function") {
+        updateContactCount();
+      }
+    } else {
+      console.log("Không tìm thấy liên hệ cần xóa");
+    }
+  } catch (error) {
+    console.error("Lỗi khi xóa liên hệ:", error);
+    alert(`Có lỗi xảy ra khi xóa liên hệ: ${error.message}`);
   }
 }

@@ -23,6 +23,11 @@ img {
   width: 240px;
   flex-direction: column;
 }
+@media (max-width: 768px) {
+  .addContact .menuPage {
+    max-width: 170px;
+  }
+}
 .addContact .menuPage__logo {
   font-family: Nunito Sans;
   font-size: 20px;
@@ -30,6 +35,11 @@ img {
   line-height: 27.28px;
   text-align: center;
   padding: 24px 53.36px 19px 66px;
+}
+@media (max-width: 768px) {
+  .addContact .menuPage__logo {
+    padding: 24px 19px;
+  }
 }
 .addContact .menuPage__logo--textColor {
   color: #4880ff;
@@ -124,20 +134,42 @@ img {
 .addContact .namePage .namePageBg .form:nth-child(1) {
   margin-bottom: 60px;
 }
+@media (max-width: 768px) {
+  .addContact .namePage .namePageBg .form:nth-child(1) {
+    margin-bottom: 20px;
+  }
+}
 .addContact .namePage .namePageBg .form:nth-child(2) {
   margin-bottom: 50px;
+}
+@media (max-width: 768px) {
+  .addContact .namePage .namePageBg .form:nth-child(2) {
+    margin-bottom: 20px;
+  }
 }
 .addContact .namePage .namePageBg .form:nth-child(3) {
   margin-left: -183px;
   margin-bottom: 60px;
 }
+@media (max-width: 768px) {
+  .addContact .namePage .namePageBg .form:nth-child(3) {
+    margin-left: 0;
+  }
+}
 .addContact .namePage .namePageBg .form {
   display: flex;
   gap: 60px;
 }
+@media (max-width: 768px) {
+  .addContact .namePage .namePageBg .form {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
 .addContact .namePage .namePageBg .form .fromWrap {
   display: flex;
   flex-direction: column;
+  position: relative;
   gap: 11px;
 }
 .addContact .namePage .namePageBg .form .fromWrap--text {
@@ -153,12 +185,27 @@ img {
   color: #a6a6a6;
   width: 360px;
 }
-.addContact .namePage .namePageBg .form .fromWrap select {
+.addContact .namePage .namePageBg .form .fromWrap .custom__select {
   padding: 18px 0 15px 16px;
   border-radius: 8px;
-  border: 0.6px solid #D5D5D5;
+  border: 0.6px solid #d5d5d5;
   color: #a6a6a6;
   width: 177px;
+  appearance: none;
+  position: relative;
+}
+.addContact .namePage .namePageBg .form .fromWrap .custom__select::after {
+  content: "";
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-image: url("/image/dropdown.svg");
+  background-repeat: no-repeat;
+  width: 12px;
+  height: 12px;
+  pointer-events: none;
+  z-index: 1;
 }
 .addContact .namePage .namePageBg .btn {
   padding: 16px 97px 15px 98px;
@@ -180,6 +227,11 @@ img {
   flex-direction: column;
   padding: 136px 0;
 }
+@media (max-width: 768px) {
+  .addContact form {
+    padding: 20px;
+  }
+}
 
 .listContact {
   display: flex;
@@ -190,6 +242,11 @@ img {
   width: 240px;
   flex-direction: column;
 }
+@media (max-width: 768px) {
+  .listContact .menuPage {
+    max-width: 170px;
+  }
+}
 .listContact .menuPage__logo {
   font-family: Nunito Sans;
   font-size: 20px;
@@ -197,6 +254,11 @@ img {
   line-height: 27.28px;
   text-align: center;
   padding: 24px 53.36px 19px 66px;
+}
+@media (max-width: 768px) {
+  .listContact .menuPage__logo {
+    padding: 24px 19px;
+  }
 }
 .listContact .menuPage__logo--textColor {
   color: #4880ff;
@@ -254,6 +316,15 @@ img {
   padding: 13px 75px 13px 0;
   gap: 20px;
 }
+.listContact .namePage__navbarTop .navbarTop__avatarImg {
+  display: flex;
+  width: 44px;
+}
+@media (max-width: 768px) {
+  .listContact .namePage__navbarTop {
+    padding: 13px;
+  }
+}
 .listContact .namePage__navbarTop .navbarTop__wrapInfo {
   display: flex;
   flex-direction: column;
@@ -293,6 +364,11 @@ img {
   color: #202224;
   font-weight: bold;
 }
+@media (max-width: 768px) {
+  .listContact .namePage .namePageBg__center .namePageBg__text {
+    font-size: 25px;
+  }
+}
 .listContact .namePage .namePageBg__center .btn {
   padding: 11px 16px 10px;
   background-color: #4880ff;
@@ -302,6 +378,12 @@ img {
   font-weight: 700;
   line-height: 27px;
   cursor: pointer;
+}
+@media (max-width: 768px) {
+  .listContact .namePage .namePageBg__center .btn {
+    padding: 5px;
+    font-size: 10px;
+  }
 }
 .listContact .namePage .namePageBg__center .btn:hover {
   transform: scale(1.05);
@@ -315,7 +397,7 @@ img {
 }
 .listContact .namePage .namePageBg .namePageBgWrap__card .cardContract {
   position: relative;
-  width: 360px;
+  max-width: 360px;
   background-color: #ffffff;
   padding-bottom: 30px;
   border-radius: 18px;

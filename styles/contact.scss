@@ -1,6 +1,14 @@
 $font: Nunito Sans;
 $border-form: 0.6px solid #d5d5d5;
 $color-text-form: #606060;
+$breakpoints: (
+  phone-sm: 420px,
+  phone: 767px,
+  tablet: 768px,
+  tablet-lg: 1024px,
+  desktop: 1025px,
+  desktop-lg: 1600px,
+);
 * {
   padding: 0;
   margin: 0;
@@ -61,11 +69,17 @@ img {
 .addContact {
   display: flex;
   .menuPage {
+    @include responsive(tablet) {
+      max-width: 170px;
+    }
     display: flex;
     gap: 21px;
     width: 240px;
     flex-direction: column;
     &__logo {
+      @include responsive(tablet) {
+        padding: 24px 19px;
+      }
       font-family: Nunito Sans;
       font-size: 20px;
       font-weight: 800;
@@ -162,20 +176,34 @@ img {
       }
       .form:nth-child(1) {
         margin-bottom: 60px;
+        @include responsive(tablet) {
+          margin-bottom: 20px;
+        }
       }
       .form:nth-child(2) {
         margin-bottom: 50px;
+        @include responsive(tablet) {
+          margin-bottom: 20px;
+        }
       }
       .form:nth-child(3) {
         margin-left: -183px;
         margin-bottom: 60px;
+        @include responsive(tablet) {
+          margin-left: 0;
+        }
       }
       .form {
         display: flex;
         gap: 60px;
+        @include responsive(tablet) {
+          flex-direction: column;
+          gap: 20px;
+        }
         .fromWrap {
           display: flex;
           flex-direction: column;
+          position: relative;
           gap: 11px;
           &--text {
             @include text-from;
@@ -188,12 +216,27 @@ img {
             color: #a6a6a6;
             width: 360px;
           }
-          select {
+          .custom__select {
             padding: 18px 0 15px 16px;
             border-radius: 8px;
-            border: 0.6px solid#D5D5D5;
+            border: 0.6px solid #d5d5d5;
             color: #a6a6a6;
             width: 177px;
+            appearance: none;
+            position: relative;
+            &::after {
+              content: "";
+              position: absolute;
+              right: 10px;
+              top: 50%;
+              transform: translateY(-50%);
+              background-image: url("/image/dropdown.svg");
+              background-repeat: no-repeat;
+              width: 12px;
+              height: 12px;
+              pointer-events: none;
+              z-index: 1;
+            }
           }
         }
       }
@@ -203,6 +246,9 @@ img {
     }
   }
   form {
+    @include responsive(tablet) {
+      padding: 20px;
+    }
     background-color: #ffffff;
     border-radius: 20px;
     border: 0.3px solid #b9b9b9;
@@ -220,7 +266,13 @@ img {
     gap: 21px;
     width: 240px;
     flex-direction: column;
+    @include responsive(tablet) {
+      max-width: 170px;
+    }
     &__logo {
+      @include responsive(tablet) {
+        padding: 24px 19px;
+      }
       font-family: Nunito Sans;
       font-size: 20px;
       font-weight: 800;
@@ -279,6 +331,13 @@ img {
     flex-direction: column;
     width: 100%;
     &__navbarTop {
+      .navbarTop__avatarImg{
+        display: flex;
+        width: 44px;
+      }
+      @include responsive(tablet) {
+        padding: 13px;
+      }
       display: flex;
       justify-content: flex-end;
       padding: 13px 75px 13px 0;
@@ -318,9 +377,16 @@ img {
           line-height: 43.65px;
           color: #202224;
           font-weight: bold;
+          @include responsive(tablet) {
+            font-size: 25px;
+          }
         }
         .btn {
           @include btn;
+          @include responsive(tablet) {
+            padding: 5px;
+            font-size: 10px;
+          }
           &:hover {
             transform: scale(1.05);
             transition: background-color 0.3s ease, transform 0.3s ease;
@@ -334,7 +400,7 @@ img {
         flex-wrap: wrap;
         .cardContract {
           position: relative;
-          width: 360px;
+          max-width: 360px;
           background-color: #ffffff;
           padding-bottom: 30px;
           border-radius: 18px;
