@@ -1,5 +1,7 @@
 $(document).ready(function () {
   $("#btn__logout").click(function (event) {
+    const user = JSON.parse(localStorage.getItem("USER")) || {};
+    localStorage.removeItem("USER")
     window.location.href = "sign-in.html";
   });
   $("#btn__addContact").click(function (event) {
@@ -8,17 +10,22 @@ $(document).ready(function () {
   loadUserData();
   sliderPage();
 });
-function loadUserData(email) {
-  const users = JSON.parse(localStorage.getItem("users")) || [];
-  console.log(users);
-  const user = users.find(user => user.email === email);
-  console.log(user);
+function loadUserData() {
+  const infoUser = $(".namePage__navbarTop");
+  const user = JSON.parse(localStorage.getItem("USER")) || {};
+  const addUser = `<div class="navbarTop__avatarImg">
+            <img class="imguers" src="image/avatarusers/${user.avataruser}" alt="" />
+          </div>
+          <div class="navbarTop__wrapInfo">
+            <div id="usernameDisplay" class="navbarTop__wrapInfo--text">${user.username}</div>
+            <div class="navbarTop__wrapInfo--des">User</div>
+          </div> `
 
-  if (user) {
-    $("#imguser").attr("src", `image/avatarusers/${user.avataruser}`);
-    $("#usernameDisplay").text(user.username);
-  }
+  infoUser.append(addUser);
 }
+
+
+
 function sliderPage() {
   if ($("body").hasClass("contactPage")) {
     $("#contact").css("background-color", "#4880ff");

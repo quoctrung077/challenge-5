@@ -6,10 +6,10 @@ $(document).ready(function () {
       event.preventDefault(); // Chặn không cho gửi
       let valid = true;
       // kiểm tra các ô input
-      valid = validateEmail($("#email"));
-      valid = validateUsername($("#username"));
-      valid = validatePassword($("#password"));
-      valid = validateCheckbox($("#checkbox, .signup__checkbox--text"));
+      valid = validateEmail($("#email")) && valid;
+      valid = validateUsername($("#username")) && valid;
+      valid = validatePassword($("#password")) && valid;
+      valid = validateCheckbox($("#checkbox, .signup__checkbox--text")) && valid;
       if (valid) {
         if (!saveToLocalStorage()) {
           alert("Email đã tồn tại. Vui lòng chọn email khác.");
@@ -136,6 +136,7 @@ function getLocalStorage() {
   const user = users.find((user) => user.email === enteredEmail);
   if (user) {
     if (user.password === enteredPassword) {
+      localStorage.setItem("USER", JSON.stringify(user));
       window.location.href = "list-contact.html";
     } else {
       $("#password").addClass("input-error");
