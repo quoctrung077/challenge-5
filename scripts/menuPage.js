@@ -1,6 +1,5 @@
 $(document).ready(function () {
   $("#btn__logout").click(function (event) {
-    const user = JSON.parse(localStorage.getItem("USER")) || {};
     localStorage.removeItem("USER")
     window.location.href = "sign-in.html";
   });
@@ -10,20 +9,30 @@ $(document).ready(function () {
   loadUserData();
   sliderPage();
 });
+
 function loadUserData() {
   const infoUser = $(".namePage__navbarTop");
+  // const accounts = JSON.parse(localStorage.getItem("accounts")) || {};
+  // const userData = {};
+  // Object.keys(accounts).forEach(email => {
+  //   const { username, avataruser } = accounts[email];
+  //   userData[email] = {
+  //     email: email,
+  //     username: username,
+  //     avataruser: avataruser
+  //   };
+  // });
+  // localStorage.setItem("USER", JSON.stringify(userData));
   const user = JSON.parse(localStorage.getItem("USER")) || {};
   const addUser = `<div class="navbarTop__avatarImg">
             <img class="imguers" src="image/avatarusers/${user.avataruser}" alt="" />
           </div>
           <div class="navbarTop__wrapInfo">
             <div id="usernameDisplay" class="navbarTop__wrapInfo--text">${user.username}</div>
-            <div class="navbarTop__wrapInfo--des">User</div>
-          </div> `
+    <div class="navbarTop__wrapInfo--des">User</div></div> `;
 
   infoUser.append(addUser);
 }
-
 
 
 function sliderPage() {

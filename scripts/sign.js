@@ -94,8 +94,8 @@ function saveToLocalStorage() {
   ];
   const randomIndex = Math.floor(Math.random() * avatarList.length);
   const selected_image = avatarList[randomIndex];
-  const user = JSON.parse(localStorage.getItem("users")) || [];
-  const emailExists = user.some((u) => u.email === email);
+  const account = JSON.parse(localStorage.getItem("accounts")) || [];
+  const emailExists = account.some((u) => u.email === email);
 
   if (username && email && password && checkbox) {
     if (emailExists) {
@@ -108,9 +108,9 @@ function saveToLocalStorage() {
       checkbox: checkbox,
       avataruser: selected_image,
     };
-    user.push(formData);
+    account.push(formData);
     // Chuyển đối tượng thành chuỗi JSON (JSON.stringify())
-    localStorage.setItem("users", JSON.stringify(user));
+    localStorage.setItem("ACCOUNTS", JSON.stringify(account));
     return true;
   }
   return false;
@@ -132,7 +132,7 @@ function getLocalStorage() {
     }
     return;
   }
-  const users = JSON.parse(localStorage.getItem("users")) || [];
+  const users = JSON.parse(localStorage.getItem("accounts")) || [];
   const user = users.find((user) => user.email === enteredEmail);
   if (user) {
     if (user.password === enteredPassword) {
