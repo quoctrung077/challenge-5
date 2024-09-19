@@ -443,6 +443,7 @@ img {
   font-size: 14px;
   font-weight: 700;
   line-height: 27px;
+  cursor: pointer;
 }
 @media (max-width: 768px) {
   .listContact .namePage .namePageBg__center .btn {
