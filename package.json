@@ -3,7 +3,8 @@
     "node-sass": "^9.0.0"
   },
   "scripts": {
-    "scss": "sass --watch styles/style.scss styles/style.css"
+    "sign": "sass --watch styles/style.scss styles/style.css",
+    "contact": "sass --watch styles/contact.scss styles/contact.css"
   }
   
 }

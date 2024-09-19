@@ -503,4 +503,76 @@ img {
   }
 }
 
+.page404 {
+  background-color: #4880ff;
+  background-image: url(/image/bg-main.svg);
+  display: flex;
+  background-size: cover;
+  height: 100vh;
+  justify-content: center;
+}
+.page404__container404 {
+  background-color: #ffffff;
+  border: 0.3px solid #b9b9b9;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 99px;
+  margin: auto;
+  padding: 102px 106px;
+}
+@media (max-width: 768px) {
+  .page404__container404 {
+    max-width: 100%;
+    padding: 25px 40px;
+    margin: auto 25px;
+    gap: 60px;
+  }
+}
+.page404 .page404__container404img {
+  display: flex;
+  justify-content: center;
+}
+.page404 .page404__container404Wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  align-items: center;
+}
+.page404 .page404__container404Wrap--text {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 43.65px;
+  color: #202224;
+}
+@media (max-width: 768px) {
+  .page404 .page404__container404Wrap--text {
+    font-size: 23px;
+  }
+}
+.page404 .page404__container404Wrap .btn__404 {
+  padding: 15px 172px 14px;
+  background-color: #4880ff;
+  align-items: center;
+  color: #ffffff;
+  opacity: 0.9;
+  border-radius: 8px;
+  font-size: 20px;
+  line-height: 27.28px;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 15px 122px;
+}
+.page404 .page404__container404Wrap .btn__404:hover {
+  transform: scale(1.05);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+@media (max-width: 768px) {
+  .page404 .page404__container404Wrap .btn__404 {
+    max-width: 100%;
+    padding: 10px 68px;
+    font-size: 18px;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */
