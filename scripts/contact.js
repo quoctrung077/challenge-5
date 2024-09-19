@@ -78,7 +78,7 @@ function saveContact() {
   const img = getRamdomImage();
 
   if (firstName && lastName && email && phone && birth && gender) {
-    const contact = JSON.parse(localStorage.getItem("contact")) || [];
+    const contact = JSON.parse(localStorage.getItem("CONTACTS")) || [];
     const maxId =
       contact.length > 0 ? Math.max(...contact.map((c) => c.id)) : 0;
     const newId = maxId + 1;
@@ -95,13 +95,13 @@ function saveContact() {
     };
 
     contact.push(listcontact);
-    localStorage.setItem("contact", JSON.stringify(contact));
+    localStorage.setItem("CONTACTS", JSON.stringify(contact));
   }
 }
 
 function insertCard() {
   const cardwrap = $(".namePageBgWrap__card");
-  const listContact = JSON.parse(localStorage.getItem("contact")) || [];
+  const listContact = JSON.parse(localStorage.getItem("CONTACTS")) || [];
 
   const addCard = listContact.reverse().map(
     (item) => ` <div class="cardContract" data-set=${item.id}>
@@ -121,13 +121,13 @@ function insertCard() {
 
 function deleteContact(id) {
   try {
-    let contacts = JSON.parse(localStorage.getItem("contact")) || [];
+    let contacts = JSON.parse(localStorage.getItem("CONTACTS")) || [];
 
     const indexToDelete = contacts.findIndex((contact) => contact.id === id);
 
     if (indexToDelete !== -1) {
       contacts.splice(indexToDelete, 1);
-      localStorage.setItem("contact", JSON.stringify(contacts));
+      localStorage.setItem("CONTACTS", JSON.stringify(contacts));
       $(`.cardContract[data-set="${id}"]`).fadeOut(300, function () {
         $(this).remove();
       });

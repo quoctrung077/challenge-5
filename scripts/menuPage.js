@@ -12,17 +12,6 @@ $(document).ready(function () {
 
 function loadUserData() {
   const infoUser = $(".namePage__navbarTop");
-  // const accounts = JSON.parse(localStorage.getItem("accounts")) || {};
-  // const userData = {};
-  // Object.keys(accounts).forEach(email => {
-  //   const { username, avataruser } = accounts[email];
-  //   userData[email] = {
-  //     email: email,
-  //     username: username,
-  //     avataruser: avataruser
-  //   };
-  // });
-  // localStorage.setItem("USER", JSON.stringify(userData));
   const user = JSON.parse(localStorage.getItem("USER")) || {};
   const addUser = `<div class="navbarTop__avatarImg">
             <img class="imguers" src="image/avatarusers/${user.avataruser}" alt="" />

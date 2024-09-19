@@ -368,6 +368,9 @@ img {
   border-top: 0.6px solid #e0e0e0;
   cursor: pointer;
 }
+.listContact .menuPage__footer:hover {
+  color: red;
+}
 .listContact .namePage {
   display: flex;
   flex-direction: column;

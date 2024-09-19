@@ -94,7 +94,7 @@ function saveToLocalStorage() {
   ];
   const randomIndex = Math.floor(Math.random() * avatarList.length);
   const selected_image = avatarList[randomIndex];
-  const account = JSON.parse(localStorage.getItem("accounts")) || [];
+  const account = JSON.parse(localStorage.getItem("ACCOUNTS")) || [];
   const emailExists = account.some((u) => u.email === email);
 
   if (username && email && password && checkbox) {
@@ -132,11 +132,16 @@ function getLocalStorage() {
     }
     return;
   }
-  const users = JSON.parse(localStorage.getItem("accounts")) || [];
+  const users = JSON.parse(localStorage.getItem("ACCOUNTS")) || [];
   const user = users.find((user) => user.email === enteredEmail);
   if (user) {
     if (user.password === enteredPassword) {
-      localStorage.setItem("USER", JSON.stringify(user));
+      const userToStore = {
+        email: user.email,
+        username: user.username,
+        avataruser: user.avataruser,
+      };
+      localStorage.setItem("USER", JSON.stringify(userToStore));
       window.location.href = "list-contact.html";
     } else {
       $("#password").addClass("input-error");

@@ -374,6 +374,9 @@ img {
       line-height: 19.1px;
       border-top: 0.6px solid #e0e0e0;
       cursor: pointer;
+      &:hover{
+        color: red;
+      }
     }
   }
   .namePage {
