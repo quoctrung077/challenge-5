@@ -4,7 +4,8 @@
   },
   "scripts": {
     "sign": "sass --watch styles/style.scss styles/style.css",
-    "contact": "sass --watch styles/contact.scss styles/contact.css"
+    "contact": "sass --watch styles/contact.scss styles/contact.css",
+    "team": "sass --watch styles/team.scss styles/team.css"
   }
   
 }

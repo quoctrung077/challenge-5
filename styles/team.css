@@ -1,0 +1,407 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Nunito Sans;
+}
+
+img {
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.input-error {
+  border: 1px solid red !important;
+}
+
+.team {
+  display: flex;
+  height: 100vh;
+}
+.team .menuPage {
+  position: relative;
+  display: flex;
+  gap: 21px;
+  width: 240px;
+  flex-direction: column;
+}
+@media (max-width: 768px) {
+  .team .menuPage {
+    max-width: 130px;
+  }
+}
+.team .menuPage__logo {
+  font-family: Nunito Sans;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 27.28px;
+  text-align: center;
+  padding: 24px 53.36px 19px 66px;
+}
+@media (max-width: 768px) {
+  .team .menuPage__logo {
+    padding: 24px 19px;
+  }
+}
+.team .menuPage__logo--textColor {
+  color: #4880ff;
+}
+.team .menuPage__item {
+  display: flex;
+  flex-direction: column;
+  padding: 0 24px;
+}
+.team .menuPage__item--text {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16.37px;
+  opacity: 0.6;
+  margin: 16px 0;
+}
+.team .menuPage__item .menuPage__itemWrap {
+  position: relative;
+}
+.team .menuPage__item .menuPage__itemWrap .menuPage__itemwrapText {
+  display: flex;
+  gap: 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.team .menuPage__item .menuPage__itemWrap .menuPage__itemwrapText:hover {
+  transform: scale(1.05);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.team .menuPage__item .menuPage__itemWrap .menuPage__itemwrapText--bgc {
+  padding-top: 16px;
+  padding-bottom: 15px;
+  padding-left: 15px;
+}
+.team .menuPage__item .menuPage__itemWrap .menuPage__itemwrapText--bgc1 {
+  position: absolute;
+  border-radius: 4px;
+  width: 9px;
+  height: 50px;
+  left: -28.5px;
+}
+.team .menuPage__footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  padding: 32px 0 15px;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 19.1px;
+  border-top: 0.6px solid #e0e0e0;
+  cursor: pointer;
+}
+.team .namePage {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.team .namePage__navbarTop {
+  display: flex;
+  justify-content: flex-end;
+  padding: 13px 75px 13px 0;
+  gap: 20px;
+}
+.team .namePage__navbarTop .navbarTop__avatarImg {
+  display: flex;
+  width: 44px;
+}
+@media (max-width: 768px) {
+  .team .namePage__navbarTop {
+    padding: 13px;
+  }
+}
+.team .namePage__navbarTop .navbarTop__wrapInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  justify-content: center;
+}
+.team .namePage__navbarTop .navbarTop__wrapInfo--text {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 19.1px;
+  color: #404040;
+  font-weight: 700;
+}
+.team .namePage__navbarTop .navbarTop__wrapInfo--des {
+  color: #565656;
+  opacity: 0.8;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16.37px;
+}
+.team .namePage .namePageBg {
+  background-color: #f5f6fa;
+  height: -webkit-fill-available;
+  padding-left: 30px;
+  padding-right: 31px;
+}
+@media (max-width: 768px) {
+  .team .namePage .namePageBg {
+    padding: 0 10px;
+  }
+}
+.team .namePage .namePageBg__center {
+  display: flex;
+  margin-top: 30px;
+  margin-bottom: 23px;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (max-width: 768px) {
+  .team .namePage .namePageBg__center {
+    flex-direction: column;
+    align-items: normal;
+  }
+}
+.team .namePage .namePageBg__center .namePageBg__text {
+  font-size: 32px;
+  line-height: 43.65px;
+  color: #202224;
+  font-weight: bold;
+}
+@media (max-width: 768px) {
+  .team .namePage .namePageBg__center .namePageBg__text {
+    font-size: 25px;
+  }
+}
+.team .namePage .namePageBg__center .namePageBg__wrap {
+  display: flex;
+  gap: 17px;
+}
+@media (max-width: 768px) {
+  .team .namePage .namePageBg__center .namePageBg__wrap {
+    flex-direction: column;
+  }
+}
+.team .namePage .namePageBg__center .namePageBg__wrap .input__search {
+  display: flex;
+}
+.team .namePage .namePageBg__center .namePageBg__wrap .input__search input {
+  width: 285px;
+  padding: 14px 0 14px 15px;
+  border: 0.6px solid #d5d5d5;
+  border-radius: 4px;
+}
+@media (max-width: 768px) {
+  .team .namePage .namePageBg__center .namePageBg__wrap .input__search input {
+    width: 232px;
+  }
+}
+.team .namePage .namePageBg__center .namePageBg__wrap .btn {
+  padding: 11px 16px 10px;
+  background-color: #4880ff;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 27px;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .team .namePage .namePageBg__center .namePageBg__wrap .btn {
+    padding: 5px;
+    font-size: 10px;
+    width: fit-content;
+  }
+}
+.team .namePage .namePageBg__center .namePageBg__wrap .btn:hover {
+  transform: scale(1.05);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.team .namePage .namePageBg .namePageBgWrap__card {
+  height: auto;
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.team .namePage .namePageBg .namePageBgWrap__card .cardTeam {
+  position: relative;
+  width: 232px;
+  background-image: url(/image/bg-team.svg);
+  background-color: #ffffff;
+  padding: 46px 45px 36px 46px;
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+.team .namePage .namePageBg .namePageBgWrap__card .cardTeam__img {
+  display: flex;
+  margin-bottom: 24px;
+}
+.team .namePage .namePageBg .namePageBgWrap__card .cardTeam__name {
+  margin-bottom: 4px;
+  font-size: 16px;
+  line-height: 21.82px;
+  font-weight: bold;
+  color: #202224;
+}
+.team .namePage .namePageBg .namePageBgWrap__card .cardTeam__position {
+  opacity: 0.6;
+  font-size: 14px;
+  line-height: 19.1px;
+  color: #202224;
+  margin-bottom: 9px;
+}
+.team .namePage .namePageBg .namePageBgWrap__card .cardTeam__email {
+  opacity: 0.8;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19.1px;
+  color: #202224;
+}
+.team .namePage .namePageBg .namePageBgWrap__card .cardTeam:hover .btn__delete {
+  display: block;
+}
+.team .namePage .namePageBg .namePageBgWrap__card .cardTeam:hover {
+  border: 0.3px solid #b9b9b9;
+  box-shadow: 6px 6px 54px 0px rgba(0, 0, 0, 0.031372549);
+}
+.team .namePage .namePageBg .namePageBgWrap__card .cardTeam .btn__delete {
+  display: none;
+  position: absolute;
+  top: 10px;
+  right: 10.4px;
+  padding: 10px 10px 7.6px;
+  background-color: #fafbfd;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2509803922);
+}
+.team .namePage .namePageBg .namePageBgWrap__card .cardTeam .btn__delete:hover {
+  transform: scale(1.05);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.team .namePage .namePageBg form {
+  display: none;
+  background-color: #ffffff;
+  border-radius: 20px;
+  border: 0.3px solid #b9b9b9;
+  align-items: center;
+  flex-direction: column;
+  padding: 136px 0;
+}
+@media (max-width: 768px) {
+  .team .namePage .namePageBg form {
+    padding: 20px;
+  }
+}
+.team .namePage .namePageBg form .form:nth-child(1) {
+  margin-bottom: 60px;
+}
+@media (max-width: 768px) {
+  .team .namePage .namePageBg form .form:nth-child(1) {
+    margin-bottom: 20px;
+  }
+}
+.team .namePage .namePageBg form .form:nth-child(2) {
+  margin-bottom: 50px;
+}
+@media (max-width: 768px) {
+  .team .namePage .namePageBg form .form:nth-child(2) {
+    margin-bottom: 20px;
+  }
+}
+.team .namePage .namePageBg form .form:nth-child(3) {
+  margin-left: -183px;
+  margin-bottom: 60px;
+}
+@media (max-width: 768px) {
+  .team .namePage .namePageBg form .form:nth-child(3) {
+    margin-left: 0;
+    margin-bottom: 20px;
+  }
+}
+.team .namePage .namePageBg form .form {
+  display: flex;
+  gap: 60px;
+}
+@media (max-width: 768px) {
+  .team .namePage .namePageBg form .form {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+.team .namePage .namePageBg form .form .fromWrap {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: 11px;
+}
+.team .namePage .namePageBg form .form .fromWrap--text {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 19.1px;
+  color: #606060;
+}
+.team .namePage .namePageBg form .form .fromWrap input {
+  padding: 18px 15px 16px;
+  border-radius: 8px;
+  border: 0.6px solid #D5D5D5;
+  color: #a6a6a6;
+  width: 360px;
+}
+@media (max-width: 768px) {
+  .team .namePage .namePageBg form .form .fromWrap input {
+    max-width: 230px;
+  }
+}
+.team .namePage .namePageBg form .form .fromWrap .custom__select {
+  padding: 18px 0 15px 16px;
+  border-radius: 8px;
+  border: 0.6px solid #d5d5d5;
+  color: #a6a6a6;
+  width: 177px;
+  appearance: none;
+  position: relative;
+}
+@media (max-width: 768px) {
+  .team .namePage .namePageBg form .form .fromWrap .custom__select {
+    width: 100px;
+  }
+}
+.team .namePage .namePageBg form .form .fromWrap .custom__select::after {
+  content: "";
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-image: url("/image/dropdown.svg");
+  background-repeat: no-repeat;
+  width: 12px;
+  height: 12px;
+  pointer-events: none;
+  z-index: 1;
+}
+.team .namePage .namePageBg form .btn {
+  padding: 16px 97px 15px 98px;
+  background-color: #4880ff;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24.55px;
+  text-align: center;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .team .namePage .namePageBg form .btn {
+    font-size: 10px;
+    padding: 10px 0;
+    width: 100px;
+  }
+}
+.team .namePage .namePageBg form .btn:hover {
+  transform: scale(1.05);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/*# sourceMappingURL=team.css.map */

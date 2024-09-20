@@ -3,20 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Add Contact</title>
+    <title>Team</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/styles/contact.css" />
+    <link rel="stylesheet" href="/styles/team.css" />
     <script src="https://code.jquery.com/jquery-latest.js"></script>
-    <script src="/scripts/contact.js"></script>
+    <script src="/scripts/team.js"></script>
     <script src="/scripts/menuPage.js"></script>
   </head>
-  <body class="contactPage">
-    <section class="addContact">
+  <body>
+    <section class="team">
       <div class="menuPage">
         <div class="menuPage__logo">
           <span class="menuPage__logo--textColor">Dash</span>Stack
@@ -25,12 +25,12 @@
           <div class="menuPage__item--text">PAGES</div>
           <div class="menuPage__itemWrap">
             <div id="contact" class="menuPage__itemwrapText">
-              <div id="hideBg" class="menuPage__itemwrapText--bgc1"></div>
-              <div id="text" class="menuPage__itemwrapText--bgc">Contact</div>
+              <div class="menuPage__itemwrapText--bgc1"></div>
+              <div class="menuPage__itemwrapText--bgc">Contact</div>
             </div>
             <div id="team" class="menuPage__itemwrapText">
-              <div class="menuPage__itemwrapText--bgc1"></div>
-              <div class="menuPage__itemwrapText--bgc">Team</div>
+              <div id="hideBg" class="menuPage__itemwrapText--bgc1"></div>
+              <div id="text" class="menuPage__itemwrapText--bgc">Team</div>
             </div>
           </div>
         </div>
@@ -38,9 +38,24 @@
       </div>
       <div class="namePage">
         <div class="namePage__navbarTop"></div>
-        <div class="namePageBg">
-          <div class="namePageBg__text">Add New Contact</div>
-          <form action=" ">
+        <div div class="namePageBg">
+          <div class="namePageBg__center">
+            <div class="namePageBg__text">Team</div>
+            <div class="namePageBg__wrap">
+              <div class="input__search">
+                <input
+                  id="searchEmail"
+                  type="text"
+                  placeholder="Search email"
+                />
+              </div>
+              <div id="btn__addNewNember" class="btn btn__addNewNember">
+                Add New Member
+              </div>
+            </div>
+          </div>
+          <div class="namePageBgWrap__card"></div>
+          <form class="container">
             <div class="form">
               <div class="fromWrap">
                 <div class="fromWrap--text">First Name</div>
@@ -91,13 +106,13 @@
             </div>
             <div class="form">
               <div class="fromWrap">
-                <div class="fromWrap--text">Date of Birth</div>
+                <div class="fromWrap--text">Position</div>
                 <div class="Form__wrap">
                   <input
                     class=""
-                    id="birth"
+                    id="position"
                     type="text"
-                    placeholder="Enter birthdate"
+                    placeholder="Enter position"
                   />
                 </div>
               </div>

@@ -12,9 +12,6 @@ $(document).ready(function () {
       saveContact();
     }
   });
-  $("#contact").click(function (event) {
-    window.location.href = "list-contact.html";
-  });
   $(document).on("click", ".btn__delete", function () {
     const contactId = $(this).closest(".cardContract").data("set");
     deleteContact(contactId);
@@ -124,7 +121,6 @@ function deleteContact(id) {
     let contacts = JSON.parse(localStorage.getItem("CONTACTS")) || [];
 
     const indexToDelete = contacts.findIndex((contact) => contact.id === id);
-
     if (indexToDelete !== -1) {
       contacts.splice(indexToDelete, 1);
       localStorage.setItem("CONTACTS", JSON.stringify(contacts));
@@ -143,3 +139,5 @@ function deleteContact(id) {
     alert(`Có lỗi xảy ra khi xóa liên hệ: ${error.message}`);
   }
 }
+
+
