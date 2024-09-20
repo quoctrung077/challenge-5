@@ -2,7 +2,7 @@
 $(document).ready(function () {
   // xử lý form khi submit
   if ($("body").hasClass("signupPage")) {
-    $(".btn__signup").click(function (event) {
+    $(".btn__signup").click((event) => {
       event.preventDefault(); // Chặn không cho gửi
       let valid = true;
       // kiểm tra các ô input
@@ -20,7 +20,7 @@ $(document).ready(function () {
     });
   }
   // xử lý form signin
-  $(".btn__signin").click(function (event) {
+  $(".btn__signin").click((event) => {
     event.preventDefault();
     getLocalStorage();
   });
