@@ -102,8 +102,16 @@ function validatePosition(positionElement) {
     return isValid;
 }
 
-function getRamdomImage() {
-    const imgList = [
+function getRamdomImage(type) {
+    const avteamList = [
+        "avteam.svg",
+        "avteam2.svg",
+        "avteam3.svg",
+        "avteam4.svg",
+        "avteam5.svg",
+        "avteam6.svg",
+    ];
+    const avcontactList = [
         "av1.svg",
         "av2.svg",
         "av3.svg",
@@ -111,10 +119,21 @@ function getRamdomImage() {
         "av5.svg",
         "av6.svg",
     ];
-    const randomIndex = Math.floor(Math.random() * imgList.length);
-    const selected_image = imgList[randomIndex];
-    return selected_image;
+
+    let selectedImage;
+    if (type === 'team') {
+        const randomIndex = Math.floor(Math.random() * avteamList.length);
+        selectedImage = avteamList[randomIndex];
+    } else if (type === 'contact') {
+        const randomIndex = Math.floor(Math.random() * avcontactList.length);
+        selectedImage = avcontactList[randomIndex];
+    } else {
+        throw new Error('Invalid type specified. Use "team" or "image".');
+    }
+
+    return selectedImage;
 }
+
 
 function saveContact() {
     const firstName = $("#firstName").val().trim();
@@ -123,7 +142,7 @@ function saveContact() {
     const phone = $("#phone").val().trim();
     const birth = $("#birth").val().trim();
     const gender = $("#gender").val();
-    const img = getRamdomImage();
+    const img = getRamdomImage('contact');
 
     if (firstName && lastName && email && phone && birth && gender) {
         const contact = JSON.parse(localStorage.getItem("CONTACTS")) || [];
@@ -147,20 +166,6 @@ function saveContact() {
     }
 }
 
-function getRamdomAvatarTeam() {
-    const avteamList = [
-        "avteam.svg",
-        "avteam2.svg",
-        "avteam3.svg",
-        "avteam4.svg",
-        "avteam5.svg",
-        "avteam6.svg",
-    ];
-    const randomIndex = Math.floor(Math.random() * avteamList.length);
-    const selected_image = avteamList[randomIndex];
-    return selected_image;
-}
-
 function saveTeam() {
     const firstName = $("#firstName").val().trim();
     const lastName = $("#lastName").val().trim();
@@ -168,7 +173,7 @@ function saveTeam() {
     const phone = $("#phone").val().trim();
     const position = $("#position").val().trim();
     const gender = $("#gender").val();
-    const img = getRamdomAvatarTeam();
+    const img = getRamdomImage('team');
 
     if (firstName && lastName && email && phone && position && gender) {
         const team = JSON.parse(localStorage.getItem("TEAMS")) || [];

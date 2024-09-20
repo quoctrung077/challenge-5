@@ -1,5 +1,7 @@
+let account = [];
 // xử lý form sign up
 $(document).ready(function () {
+  account = JSON.parse(localStorage.getItem("ACCOUNTS")) || [];
   // xử lý form khi submit
   if ($("body").hasClass("signupPage")) {
     $(".btn__signup").click((event) => {
@@ -94,7 +96,7 @@ function saveToLocalStorage() {
   ];
   const randomIndex = Math.floor(Math.random() * avatarList.length);
   const selected_image = avatarList[randomIndex];
-  const account = JSON.parse(localStorage.getItem("ACCOUNTS")) || [];
+
   const emailExists = account.some((u) => u.email === email);
 
   if (username && email && password && checkbox) {
@@ -132,8 +134,7 @@ function getLocalStorage() {
     }
     return;
   }
-  const users = JSON.parse(localStorage.getItem("ACCOUNTS")) || [];
-  const user = users.find((user) => user.email === enteredEmail);
+  const user = account.find((user) => user.email === enteredEmail);
   if (user) {
     if (user.password === enteredPassword) {
       const userToStore = {

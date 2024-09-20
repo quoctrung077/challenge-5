@@ -1,5 +1,6 @@
+let teams = [];
 $(document).ready(function () {
-
+    teams = JSON.parse(localStorage.getItem("TEAMS")) || [];
     $(document).on("click", ".btn__delete", function () {
         const teamId = $(this).closest(".cardTeam").data("set");
         deleteTeam(teamId);
@@ -11,8 +12,8 @@ $(document).ready(function () {
 
 function insertCardTeam() {
     const cardwrap = $(".namePageBgWrap__card");
-    const listTeam = JSON.parse(localStorage.getItem("TEAMS")) || [];
-    const addCard = listTeam.reverse().map(
+
+    const addCard = teams.reverse().map(
         (item) => `<div class="cardTeam" data-set=${item.id}>
             <div class="btn btn__delete">
                 <img src="/image/delete.svg" alt="" />
@@ -30,26 +31,20 @@ function insertCardTeam() {
 }
 
 function deleteTeam(id) {
-    try {
-        let teams = JSON.parse(localStorage.getItem("TEAMS")) || [];
 
-        const indexToDelete = teams.findIndex((contact) => contact.id === id);
-        if (indexToDelete !== -1) {
-            teams.splice(indexToDelete, 1);
-            localStorage.setItem("TEAMS", JSON.stringify(teams));
-            $(`.cardTeam[data-set="${id}"]`).fadeOut(300, function () {
-                $(this).remove();
-            });
-            console.log("Xóa liên hệ thành công");
-            if (typeof updateContactCount === "function") {
-                updateContactCount();
-            }
-        } else {
-            console.log("Không tìm thấy liên hệ cần xóa");
+    const indexToDelete = teams.findIndex((contact) => contact.id === id);
+    if (indexToDelete !== -1) {
+        teams.splice(indexToDelete, 1);
+        localStorage.setItem("TEAMS", JSON.stringify(teams));
+        $(`.cardTeam[data-set="${id}"]`).fadeOut(300, function () {
+            $(this).remove();
+        });
+        console.log("Xóa liên hệ thành công");
+        if (typeof updateContactCount === "function") {
+            updateContactCount();
         }
-    } catch (error) {
-        console.error("Lỗi khi xóa liên hệ:", error);
-        alert(`Có lỗi xảy ra khi xóa liên hệ: ${error.message}`);
+    } else {
+        console.log("Không tìm thấy liên hệ cần xóa");
     }
 }
 
